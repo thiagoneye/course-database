@@ -10,4 +10,4 @@ Once registered, whenever a customer buys a particular product, their customer c
 
 ## ER Diagram
 
-<img src="ER-Diagram/project.svg">
+<img src="ER-Diagram/project.png" width="600px">
