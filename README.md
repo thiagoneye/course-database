@@ -8,7 +8,6 @@ https://www.udemy.com/course/curso-de-banco-de-dados-do-basico-ao-avancado/
 
 ## Content
 
-0. Others
 1. Presentation
 2. Introduction
 3. Data Modeling
