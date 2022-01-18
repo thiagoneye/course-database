@@ -1,5 +1,5 @@
-# Inserindo Dados de Teste
 # DML - Data Manipulation Language
+# Inserindo Dados de Teste
 
 # OBS.: Todos os dados inseridos são fictícios, utilizados para fins de estudos
 
