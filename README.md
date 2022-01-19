@@ -6,7 +6,7 @@ All files were based on the course from the cited site.
 
 https://www.udemy.com/course/curso-de-banco-de-dados-do-basico-ao-avancado/
 
-## Content
+## Contents
 
 1. Presentation
 2. Introduction
