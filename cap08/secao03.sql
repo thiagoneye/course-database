@@ -1,0 +1,38 @@
+CREATE DATABASE secao03;
+
+-- O tipo INT AUTO_INCREMENT é equivalente ao tipo SERIAL
+
+CREATE TABLE tipos_produtos (
+	id SERIAL PRIMARY KEY,
+	descricao CHARACTER VARYING (50) NOT NULL
+);
+
+CREATE TABLE produtos (
+	id SERIAL PRIMARY KEY,
+	descricao CHARACTER VARYING (50) NOT NULL,
+	preco MONEY NOT NULL,
+	id_tipo_produto INT NOT NULL REFERENCES tipos_produtos (id)
+);
+
+CREATE TABLE pacientes (
+	id SERIAL PRIMARY KEY,
+	nome CHARACTER VARYING (50) NOT NULL,
+	endereco CHARACTER VARYING (50) NOT NULL,
+	bairro CHARACTER VARYING (50) NOT NULL,
+	cidade CHARACTER VARYING (50) NOT NULL,
+	estado CHARACTER (2) NOT NULL,
+	cep CHARACTER VARYING (10) NOT NULL,
+	data_nascimento DATE NOT NULL
+);
+
+CREATE TABLE professores (
+	id SERIAL PRIMARY KEY,
+	telefone INT NOT NULL,
+	nome CHARACTER VARYING (50) NOT NULL
+);
+
+CREATE TABLE turmas (
+	id SERIAL PRIMARY KEY,
+	capacidade INT NOT NULL,
+	id_professor INT NOT NULL REFERENCES professores (id)
+);
