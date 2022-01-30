@@ -1,0 +1,54 @@
+TABLE generos {
+  id INT [pk, increment, not null]
+  nome VARCHAR(50) [not null]
+}
+
+TABLE filmes {
+  id INT [pk, increment, not null]
+  titulo VARCHAR(50) [not null]
+  id_genero VARCHAR(50) [ref: > generos.id, not null]
+}
+
+TABLE dvds {
+  id INT [pk, increment, not null]
+  quantidade INT [not null]
+  valor DECIMAL(8,2) [not null]
+  id_filme INT [ref: > filmes.id, not null]
+}
+
+TABLE atores {
+  id INT [pk, increment, not null]
+  nome VARCHAR(50) [not null]
+}
+
+TABLE clientes {
+  id INT [pk, increment, not null] // Número de Associado
+  nome VARCHAR(50) [not null]
+  sobrenome VARCHAR(50) [not null]
+  telefone VARCHAR(16) [not null]
+  endereco VARCHAR(100) [not null]
+}
+
+TABLE atores_filmes {
+  id_ator INT [pk, ref: > atores.id, not null]
+  id_filme INT [pk, ref: > filmes.id, not null]
+  personagem VARCHAR(50) [not null]
+}
+
+TABLE emprestimos {
+  id INT [pk, increment, not null]
+  data DATE [not null]
+  id_cliente INT [ref: > clientes.id, not null]
+}
+
+TABLE devolucoes {
+  id INT [pk, increment, not null]
+  data DATE [not null]
+  atraso INT [not null]
+  id_emprestimo INT [ref: > emprestimos.id, not null]
+}
+
+TABLE dvds_emprestimos {
+  id_emprestimo INT [pk, ref: > emprestimos.id, not null]
+  id_dvds INT [pk, ref: > dvds.id, not null]
+}
