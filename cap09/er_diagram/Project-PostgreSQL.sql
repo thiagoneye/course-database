@@ -6,7 +6,7 @@ CREATE TABLE "generos" (
 CREATE TABLE "filmes" (
   "id" SERIAL PRIMARY KEY NOT NULL,
   "titulo" VARCHAR(50) NOT NULL,
-  "id_genero" VARCHAR(50) NOT NULL
+  "id_genero" INT NOT NULL
 );
 
 CREATE TABLE "dvds" (
