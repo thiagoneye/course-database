@@ -16,4 +16,4 @@ Finally, the system should allow consulting of DVD loans, with information on wh
 
 ## ER Diagram
 
-<img src="er_diagram/Project-PostgreSQL.png" width="800px">
+<img src="er_diagram/Project-PostgreSQL.png" width="1000px">
