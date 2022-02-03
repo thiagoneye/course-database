@@ -33,4 +33,4 @@ The chapters 1 to 5 present theories, the chapters 6 to 18 present practices and
 
 ## Others
 
-See also the repositories [beecrowd-programming](https://github.com/thiagoneye/beecrowd-programming) and [book-database](https://github.com/thiagoneye/book-database).
+See also the repositories [beecrowd-programming](https://github.com/thiagoneye/beecrowd-programming).
