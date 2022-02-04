@@ -4,7 +4,7 @@ SQL and NoSQL database studies from the Udemy website.
 
 All files were based on the course from the cited site.
 
-https://www.udemy.com/course/curso-de-banco-de-dados-do-basico-ao-avancado/
+[Bancos de Dados SQL e NoSQL do básico ao avançado](https://www.udemy.com/course/curso-de-banco-de-dados-do-basico-ao-avancado/)
 
 ## Contents
 
