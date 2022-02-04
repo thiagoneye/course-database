@@ -31,4 +31,5 @@ O MongoDB é um software de banco de dados orientado a documentos livre (NoSQL),
 
 - **$or: {}** - Operador lógico OR, utilizado em combinação com db.*collectionName*.find().
 - **$set: {}** - Operador de agregação SER, substitui o valor de um campo por o valor especificado; utilizado em combinação com db.*collectionName*.update().
-- **$push: {}** - Operador de agregação PUSH, adiciona um novo valor; utilizado em combinação com db.*collectionName*.update(), para adicionar valores em uma/um lista/array.
+- **$push: {}** - Operador de agregação PUSH, adiciona um novo valor; utilizado em combinação com db.*collectionName*.update(), para adicionar valores em um array.
+- **$each: {}** - Operador de agregação EACH, adiciona vários valores; utilizado em combinação com db.*collectionName*.update() e com o operador *$push: {}*.
