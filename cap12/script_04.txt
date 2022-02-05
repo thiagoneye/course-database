@@ -1,0 +1,64 @@
+db.inscricoes.update(
+	{"_id" : ObjectId("5d07ad35d4975e81d79dee18")},
+	{
+		$set: {
+			"localizacao": {
+				"endereco": "Avenida Zulmira Borba, 1978"
+			}
+		}
+	}
+)
+
+db.inscricoes.update(
+	{"_id" : ObjectId("5d07ad35d4975e81d79dee18")},
+	{
+		$set: {
+			"localizacao": {
+				"endereco": "Avenida Zulmira Borba, 1978",
+				"coordinates": [-20.388008, -54.577545],
+				"type": "Point"
+			}
+		}
+	}
+)
+
+db.inscricoes.createIndex(
+	{
+		"localizacao": "2dsphere"
+	}
+)
+
+db.inscricoes.aggregate(
+	[
+		{
+			$geoNear: {
+				"near": {
+					"coordinates": [-20.388008, -54.577546],
+					"type": "Point"
+				},
+				"distanceField": "distancia.calculada",
+				"spherical": true,
+				"num": 4
+			}
+		}
+	]
+)
+
+db.inscricoes.aggregate(
+	[
+		{
+			$geoNear: {
+				"near": {
+					"coordinates": [-20.388008, -54.577546],
+					"type": "Point"
+				},
+				"distanceField": "distancia.calculada",
+				"spherical": true,
+				"num": 4
+			}
+		},
+		{
+			$skip: 1
+		}
+	]
+).pretty()
