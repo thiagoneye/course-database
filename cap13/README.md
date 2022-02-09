@@ -2,7 +2,7 @@
 
 O Redis é um armazenamento de estrutura de dados de chave-valor de código aberto e na memória. O Redis oferece um conjunto de estruturas versáteis de dados na memória que permite a fácil criação de várias aplicações personalizadas. Os principais casos de uso do Redis incluem cache, gerenciamento de sessões, PUB/SUB e classificações. Redis é um acrônimo de REmote DIctionary Server (servidor de dicionário remoto).
 
-Sua principal aplicação é o uso em conjunto com algum banco de dados, servindo como ferramenta complementar (fazendo uma consulta inicial ao banco de dados, armazenando os dados em uma lista em memória, utilizá-lo para acesso otimizado aos dados e, posteriormente, fazer a injestão dos dados modificados/criados no banco de dados).
+Sua principal aplicação é o uso em conjunto com algum banco de dados, servindo como ferramenta intermediária (fazendo uma consulta inicial ao banco de dados, armazenando os dados em uma lista em memória, utilizá-lo para acesso otimizado aos dados e, posteriormente, fazer a injestão dos dados modificados/criados no banco de dados).
 
 Possui suporte apenas em sistemas baseados no Unix (no Windows é possível a utilização através do Windows Subsystem for Linux).
 
