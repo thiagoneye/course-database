@@ -27,6 +27,9 @@ Possui suporte apenas em sistemas baseados no Unix (no Windows é possível a ut
 - **HGET *hash* *key*** - Consulta o valor da chave *key* para a hash *hash*.
 - **HKEYS *hash*** - Consulta todas as chaves armazenadas para a hash *hash*.
 - **HGETALL *hash*** - Consulta todos os registros (chave-valor) para a hash *hash*.
+- **LINDEX *listName* *index*** - Consulta o elemento de índice *index* da lista *listName*.
+- **LRANGE *listName* *index0* *indexN*** - Consulta os elementos no intervalo de *index0* a *indexN*.
+- **LLEN *listName*** - Consulta o tamanho da lista.
 
 ### Manipulações
 
@@ -35,6 +38,9 @@ Possui suporte apenas em sistemas baseados no Unix (no Windows é possível a ut
 - **MSET *key1* *value1* *key2* *value2* *key3* *value3*** - Insere múltiplos registros (chave-valor).
 - **HSET *hash* *key* *value*** - Insere o valor *value* para a chave *key* para a hash (estrutura contendo vários registros chave-valor) *hash*.
 - **HMSET *hash* *key1* *value1* *key2* *value2* *key3* *value3*** - Insere múltiplos registros (chave-valor) na hash *hash*.
+- **LPUSH *listName* *element*** - Insere o elemento *element* à esquerda da lista *listName*.
+- **RPUSH *listName* *element*** - Insere o elemento *element* à direita da lista *listName*.
+- **LTRIM *listName* *index0* *indexN*** - Trunca os elementos no intervalo de *index0* a *indexN*.
 
 ## Atalhos (Bash)
 
