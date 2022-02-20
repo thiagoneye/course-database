@@ -49,6 +49,7 @@ Possui suporte apenas em sistemas baseados no Unix (no Windows é possível a ut
 - **ZRANGE *listName* *index0* *indexN*** - Consulta os elementos no intervalo de *index0* a *indexN*.
 - **ZREVRANGE *listName* *index0* *indexN*** - Ordena do maior para o menor e consulta os elementos no intervalo de *index0* a *indexN*.
 - **ZSCORE *sortedListName* *keyName*** - Consulta o valor da chave *keyName* para a lista *sortedListName*.
+- **ZRANK *sortedListName* *keyName*** - Consulta a posição da chave *keyName* para a lista *sortedListName*.
 
 ### Manipulações
 
