@@ -8,6 +8,7 @@ Aplicação CRUD com Python e PostgreSQL
 
 # Imports
 
+import psycopg2
 
 # Functions
 
