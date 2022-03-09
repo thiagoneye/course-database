@@ -8,73 +8,115 @@ Aplicação CRUD com Python e MySQL
 
 # Imports
 
-import MySQLdb
+import getpass
+import mysql.connector
 
 # Functions
 
 def conectar():
     """
-    Função para conectar ao servidor
+    Função para conectar ao servidor.
     """
-    print('Conectando ao servidor...')
+    try:
+        cnx = mysql.connector.connect(
+            user='root',
+            password=getpass.getpass(),
+            host='127.0.0.1',
+            database='pmysql'
+        )
+        return cnx
+    except mysql.connector.Error as err:
+        print("Something went wrong: {}".format(err))
 
-
-def desconectar():
+def desconectar(cnx):
     """ 
     Função para desconectar do servidor.
     """
-    print('Desconectando do servidor...')
+    cnx.close()
 
-
-def listar():
+def listar(cnx):
     """
-    Função para listar os produtos
+    Função para listar os produtos.
     """
-    print('Listando produtos...')
+    cursor = cnx.cursor()
+    cursor.execute('SELECT * FROM produtos')
+    produtos = cursor.fetchall()
 
+    if len(produtos) > 0:
+        print('Listando produtos ...')
+        print('---------------------')
+        for produto in produtos:
+            print(f'ID: {produto[0]}')
+            print(f'Produto: {produto[1]}')
+            print(f'Preço: {produto[2]}')
+            print(f'Quantidade de Estoque: {produto[3]}')
+    else:
+        print('Não existem produtos cadastrados.')
 
-def inserir():
+def inserir(cnx):
     """
-    Função para inserir um produto
-    """  
-    print('Inserindo produto...')
-
-
-def atualizar():
+    Função para inserir um produto.
     """
-    Função para atualizar um produto
+    nome = input('Informe o nome do produto: ')
+    preco = float(input('Informe o preço do produto: '))
+    estoque = int(input('Informe a quantidade do produto: '))
+
+    cursor = cnx.cursor()
+    cursor.execute(f'INSERT INTO produtos (nome, preco, estoque) VALUE ("{nome}", "{preco}", "{estoque}")')
+
+def submeter(cnx):
     """
-    print('Atualizando produto...')
-
-
-def deletar():
+    Função para enviar as alterações do banco de dados.
     """
-    Função para deletar um produto
-    """  
-    print('Deletando produto...')
+    cnx.commit()
 
+def atualizar(cnx):
+    """
+    Função para atualizar um produto.
+    """
+    codigo = int(input('Informe o código do produto: '))
+    nome = input('Informe o novo nome do produto: ')
+    preco = float(input('Informe o novo preço do produto: '))
+    estoque = int(input('Informe a nova quantidade do produto: '))
+
+    cursor = cnx.cursor()
+    cursor.execute(f'UPDATE produtos SET nome="{nome}", preco="{preco}", estoque="{estoque}" WHERE id="{codigo}"')
+
+def deletar(cnx):
+    """
+    Função para deletar um produto.
+    """
+    codigo = int(input('Informe o código do produto: '))
+
+    cursor = cnx.cursor()
+    cursor.execute(f'DELETE FROM produtos WHERE id="{codigo}"')
 
 def menu():
     """
-    Função para gerar o menu inicial
+    Função para gerar o menu inicial.
     """
-    print('=========Gerenciamento de Produtos==============')
+    cnx = conectar()
+
+    print('========= Gerenciamento de Produtos ==============')
     print('Selecione uma opção: ')
     print('1 - Listar produtos.')
     print('2 - Inserir produtos.')
     print('3 - Atualizar produto.')
     print('4 - Deletar produto.')
+
     opcao = int(input())
+
     if opcao in [1, 2, 3, 4]:
         if opcao == 1:
-            listar()
+            listar(cnx)
         elif opcao == 2:
-            inserir()
+            inserir(cnx)
         elif opcao == 3:
-            atualizar()
-        elif opcao == 4:
-            deletar()
+            atualizar(cnx)
         else:
-            print('Opção inválida')
+            deletar(cnx)
+
+        submeter(cnx)
+        desconectar(cnx)
     else:
         print('Opção inválida')
