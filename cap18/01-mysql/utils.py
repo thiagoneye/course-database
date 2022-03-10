@@ -26,7 +26,7 @@ def conectar():
         )
         return cnx
     except mysql.connector.Error as err:
-        print("Something went wrong: {}".format(err))
+        print('Something went wrong: {}'.format(err))
 
 def desconectar(cnx):
     """ 
