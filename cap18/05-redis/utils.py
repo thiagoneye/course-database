@@ -86,7 +86,7 @@ def atualizar(conn):
     """
     Função para atualizar um produto.
     """
-    chave = int(input('Informe a chave do produto a ser atualizado: '))
+    chave = input('Informe a chave do produto a ser atualizado: ')
     nome = input('Informe o novo nome do produto: ')
     preco = float(input('Informe o novo preço do produto: '))
     estoque = int(input('Informe o novo estoque do produto: '))
